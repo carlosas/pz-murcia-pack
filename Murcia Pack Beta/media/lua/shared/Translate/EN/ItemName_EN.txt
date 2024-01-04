@@ -1,0 +1,3 @@
+ItemName_EN = {
+	ItemName_murciapack.MurcianCrisps = "Chips with lemon and pepper",
+}

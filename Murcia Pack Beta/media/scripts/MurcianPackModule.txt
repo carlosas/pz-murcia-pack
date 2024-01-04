@@ -1,0 +1,113 @@
+module Base
+{
+
+/* PATATICAS CON LIMON */
+
+	model MurcianCrispsModel
+	{
+		mesh = WorldItems/Chips,
+		texture = WorldItems/MurcianChips,
+		scale = 0.28,
+	}
+	
+	item MurcianCrisps
+	{
+		DisplayName = Chips with lemon and pepper,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.2,
+		Icon = MurcianCrisps,
+		CantBeFrozen = TRUE,
+		Packaged = TRUE,
+		HungerChange = -20,
+		UnhappyChange = -10,
+		Calories = 725,
+		Carbohydrates = 75,
+		Lipids = 45,
+		Proteins = 4.7,
+		CustomEatSound = EatingCrispy,
+		WorldStaticModel = MurcianCrispsModel,
+	}
+	
+    recipe Make chips with lemon and pepper
+    {
+		Crisps/Crisps2/Crisps3/Crisps4,
+		Pepper;1,
+		Lemon=1,
+
+		Result:MurcianCrisps,
+		Sound:PutItemInBag,
+		Time:50.0,
+		Category:Cooking,
+		OnGiveXP:Recipe.OnGiveXP.Cooking3,
+    }
+	
+/* ZARANGOLLO */
+
+	model ZarangolloPanModel_Ground
+    {
+        mesh = WorldItems/PanFriedVegetables,
+        texture = WorldItems/ZarangolloPan,
+        scale = 0.4,
+    }
+	
+	model ZarangolloPanModel_GroundRotten
+    {
+        mesh = WorldItems/PanFriedVegetables,
+        texture = WorldItems/ZarangolloPanRotten,
+        scale = 0.4,
+    }
+	
+    item ZarangolloPan
+    {
+        DisplayName	= Zarangollo Pan,
+		DisplayCategory = Food,
+        Type = Food,
+		DangerousUncooked = TRUE,
+		Icon = PanFull,
+		CookingSound = FryingFood,
+        Weight = 2.2,
+		DaysFresh = 3,
+        DaysTotallyRotten = 5,
+        IsCookable = true,
+        MinutesToCook = 30,
+        MinutesToBurn = 50,
+        Calories = 280,
+        Carbohydrates = 25,
+        Proteins = 19,
+        Lipids = 10,
+        HungerChange = -55,
+		ThirstChange = -20,
+		UnhappyChange = -15,
+        BadInMicrowave = true,
+		GoodHot = true,
+		ReplaceOnUse = Pan,
+		WorldStaticModel = ZarangolloPanModel_Ground,
+    }
+
+	recipe Make Zarangollo
+    {
+		Pan,
+	    [Recipe.GetItemTypes.Egg]=2,
+		Zucchini=3,
+		Onion=1,
+
+        Result:ZarangolloPan,
+        Time:250.0,
+        Category:Cooking,
+		/*Sound:SliceMeat,*/
+		OnGiveXP:Recipe.OnGiveXP.Cooking10,
+    }
+	
+	recipe Empty Zarangollo Pan
+	{
+		ZarangolloPan,
+
+        Result:Pan,
+        Time:50.0,
+        Category:Cooking,
+		Sound:EmptyPan,
+		AllowRottenItem:true,
+        OnGiveXP:Recipe.OnGiveXP.None,	
+	}
+}

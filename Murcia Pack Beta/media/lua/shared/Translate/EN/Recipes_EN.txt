@@ -1,0 +1,3 @@
+Recipe_EN = {
+	Recipe_Make_chips_with_lemon_and_pepper = "Make chips with lemon and pepper",
+}

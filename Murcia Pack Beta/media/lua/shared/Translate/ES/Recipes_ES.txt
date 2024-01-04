@@ -1,0 +1,3 @@
+Recipe_ES = {
+	Recipe_Make_chips_with_lemon_and_pepper = "Hacer pataticas con limón y pimienta",
+}
