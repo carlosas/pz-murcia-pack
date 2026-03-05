@@ -1,0 +1,5 @@
+Recipe_ES = {
+	Recipe_MakeChipsWithLemonAndPepper = "Hacer pataticas con limón y pimienta",
+	Recipe_MakeZarangollo = "Hacer Zarangollo",
+	Recipe_EmptyZarangolloPan = "Vaciar sartén de Zarangollo",
+}

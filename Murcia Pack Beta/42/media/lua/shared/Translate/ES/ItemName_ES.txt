@@ -1,0 +1,4 @@
+ItemName_ES = {
+	ItemName_Base.MurcianCrisps = "Pataticas con limón y pimienta",
+	ItemName_Base.ZarangolloPan = "Sartén de Zarangollo",
+}

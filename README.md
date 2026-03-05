@@ -1,6 +1,6 @@
 # Murcia Pack (Project Zomboid Mod)
 
-Set of objects and recipes for the *Project Zomboid* game (Build 41).
+Set of objects and recipes for the *Project Zomboid* game (Build 42).
 
 :warning: **This mod is in development, not yet available.**
 
@@ -11,4 +11,4 @@ Set of objects and recipes for the *Project Zomboid* game (Build 41).
 - [PZ Wiki Modding Docs](https://pzwiki.net/wiki/Modding)
 
 ## Mod Poster
-![Murcia Pack](https://github.com/carlosas/pz-murcian-pack/blob/main/Murcia%20Pack%20Beta/poster.png)
+![Murcia Pack](https://github.com/carlosas/pz-murcian-pack/blob/main/Murcia%20Pack%20Beta/42/poster.png)

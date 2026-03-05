@@ -1,0 +1,4 @@
+ItemName_EN = {
+	ItemName_Base.MurcianCrisps = "Chips with lemon and pepper",
+	ItemName_Base.ZarangolloPan = "Zarangollo Pan",
+}

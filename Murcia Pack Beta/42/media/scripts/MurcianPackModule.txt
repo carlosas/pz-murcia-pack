@@ -1,0 +1,124 @@
+module Base
+{
+
+/* PATATICAS CON LIMON */
+
+	model MurcianCrispsModel
+	{
+		mesh = WorldItems/Chips,
+		texture = WorldItems/MurcianChips,
+		scale = 0.28,
+	}
+
+	item MurcianCrisps
+	{
+		DisplayName = Chips with lemon and pepper,
+		DisplayCategory = Food,
+		Type = Food,
+		Weight = 0.2,
+		Icon = MurcianCrisps,
+		CantBeFrozen = TRUE,
+		Packaged = TRUE,
+		HungerChange = -20,
+		UnhappyChange = -10,
+		Calories = 725,
+		Carbohydrates = 75,
+		Lipids = 45,
+		Proteins = 4.7,
+		CustomEatSound = EatingCrispy,
+		WorldStaticModel = MurcianCrispsModel,
+	}
+
+	craftRecipe MakeChipsWithLemonAndPepper
+	{
+		time = 50,
+		category = Cooking,
+		xpAward = Cooking:3,
+		inputs
+		{
+			item 1 [Base.Crisps;Base.Crisps2;Base.Crisps3;Base.Crisps4],
+			item 1 [Base.Pepper] mode:keep,
+			item 1 [Base.Lemon],
+		}
+		outputs
+		{
+			item 1 Base.MurcianCrisps,
+		}
+	}
+
+/* ZARANGOLLO */
+
+	model ZarangolloPanModel_Ground
+	{
+		mesh = WorldItems/PanFriedVegetables,
+		texture = WorldItems/ZarangolloPan,
+		scale = 0.4,
+	}
+
+	model ZarangolloPanModel_GroundRotten
+	{
+		mesh = WorldItems/PanFriedVegetables,
+		texture = WorldItems/ZarangolloPanRotten,
+		scale = 0.4,
+	}
+
+	item ZarangolloPan
+	{
+		DisplayName = Zarangollo Pan,
+		DisplayCategory = Food,
+		Type = Food,
+		DangerousUncooked = TRUE,
+		Icon = PanFull,
+		CookingSound = FryingFood,
+		Weight = 2.2,
+		DaysFresh = 3,
+		DaysTotallyRotten = 5,
+		IsCookable = true,
+		MinutesToCook = 30,
+		MinutesToBurn = 50,
+		Calories = 280,
+		Carbohydrates = 25,
+		Proteins = 19,
+		Lipids = 10,
+		HungerChange = -55,
+		ThirstChange = -20,
+		UnhappyChange = -15,
+		BadInMicrowave = true,
+		GoodHot = true,
+		ReplaceOnUse = Pan,
+		WorldStaticModel = ZarangolloPanModel_Ground,
+	}
+
+	craftRecipe MakeZarangollo
+	{
+		time = 250,
+		category = Cooking,
+		xpAward = Cooking:10,
+		inputs
+		{
+			item 1 [Base.Pan],
+			item 2 tags[Egg],
+			item 3 [Base.Zucchini],
+			item 1 [Base.Onion],
+		}
+		outputs
+		{
+			item 1 Base.ZarangolloPan,
+		}
+	}
+
+	craftRecipe EmptyZarangolloPan
+	{
+		time = 50,
+		category = Cooking,
+		AllowRottenItem = true,
+		inputs
+		{
+			item 1 [Base.ZarangolloPan],
+		}
+		outputs
+		{
+			item 1 Base.Pan,
+		}
+	}
+}
